@@ -22,9 +22,7 @@ DROP TABLE customers; # Delete a table (DELETE - DDL)
 DROP DATABASE qa_restaurant; # Delete a database (DELETE - DDL)
 
 
-
-
-
-
+INSERT INTO customers(cust_name, phone_number) VALUES("ash","07946621661"); #(CREATE -DML)
+INSERT INTO customers(cust_name, phone_number) VALUES("ash2","97946621111");
 
 SELECT * FROM customers; #(READ - DML)
