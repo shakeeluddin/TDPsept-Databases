@@ -24,8 +24,27 @@ ALTER TABLE customers DROP COLUMN over_18; #UPDATE an exisitng table, delete a c
 
 ALTER TABLE customers MODIFY c_name VARCHAR(50) DEFAULT "N/A"; #UPDATE an existing table, modify existing coloumn definition
 
+ALTER TABLE customers RENAME TO cust;
 
 
+#DML commands
+#CREATE - insert into
+#READ - select
+#UPDATE - update
+#DELETE - delete
+
+SELECT * FROM customers;
+SELECT c_id, c_name FROM customers;
+
+#                      c1       c2             c3    c4          v1      v2            v3   v4
+INSERT INTO customers(c_name, phone_number, points, age) VALUES("ash", "12341234123", 5.6, 123);
+INSERT INTO customers(phone_number, c_name, points, age) VALUES("ash2", "12341234123", 5.6, 123);
+
+INSERT INTO customers(phone_number, over_18) VALUES("12342123",1);
+
+UPDATE customers SET c_name="blue", phone_number="11233333333" WHERE c_id=2;
+
+DELETE FROM customers WHERE c_id=3;
 
 
 
