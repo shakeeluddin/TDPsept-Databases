@@ -40,25 +40,38 @@ SELECT c_id, c_name FROM customers;
 INSERT INTO customers(c_name, phone_number, points, age) VALUES("ash", "12341234123", 5.6, 123);
 INSERT INTO customers(phone_number, c_name, points, age) VALUES("ash2", "12341234123", 5.6, 123);
 
+INSERT INTO customers(phone_number, c_name, points,age) VALUES("ash3", "12341234123", 5.6, 123),("bob", "12341234123", 5.6, 123),("bill", "12341234123", 5.6, 123),("ed", "12341234123", 5.6, 123);
+
+
+
 INSERT INTO customers(phone_number, over_18) VALUES("12342123",1);
 
 UPDATE customers SET c_name="blue", phone_number="11233333333" WHERE c_id=2;
 
 DELETE FROM customers WHERE c_id=3;
 
-
-
-
-
-
-
-
-
+CREATE TABLE items(
+item_id INT UNIQUE NOT NULL AUTO_INCREMENT,
+item_name VARCHAR(20),
+price DECIMAL(6,2),
+PRIMARY KEY(item_id));
 
 
 CREATE TABLE orders(
-o_id INT UNIQUE NOT NULL AUTO_INCREMENT,
+order_id INT UNIQUE NOT NULL AUTO_INCREMENT,
 cust_id INT NOT NULL,
-o_date DATE,
-PRIMARY KEY(o_id),
+total_price DECIMAL(6,2),
+PRIMARY KEY(order_id),
 FOREIGN KEY (cust_id) REFERENCES customers(c_id));
+
+
+
+CREATE TABLE order_items(
+oi_id INT UNIQUE NOT NULL AUTO_INCREMENT,
+ord_id INT NOT NULL,
+i_id INT NOT NULL,
+quantity INT,
+PRIMARY KEY(oi_id),
+FOREIGN KEY (ord_id) REFERENCES orders(order_id),
+FOREIGN KEY (i_id) REFERENCES items(item_id));
+
