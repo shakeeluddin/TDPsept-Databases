@@ -1,0 +1,10 @@
+USE WORLD;
+Select * from city;
+select count (name) from city where CountryCode ="USA"; 
+SELECT * FROM CITY;
+SELECT Population,LifeExpectancy FROM Country WHERE NAME = "argentina"; 
+SELECT LifeExpectancy name from country where LifeExpectancy is NOT NULL ORDER BY LifeExpectancy DESC limit 1; 
+SELECT City.name from country join city ON Country.Capital=city.id where country.name = "spain";
+SELECT * from countrylanguage;
+SELECT DISTINCT CountryLanguage.language from countrylanguage join country on countrylanguage.countrycode=country.code where country.region="southeast asia";
+SELECT COUNT (name) from city where CountryCode = "china";
