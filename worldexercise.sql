@@ -1,10 +1,15 @@
 USE WORLD;
 Select * from city;
-select count (name) from city where CountryCode ="USA"; 
+select count(name) from city where CountryCode ="USA"; 
 SELECT * FROM CITY;
 SELECT Population,LifeExpectancy FROM Country WHERE NAME = "argentina"; 
-SELECT LifeExpectancy name from country where LifeExpectancy is NOT NULL ORDER BY LifeExpectancy DESC limit 1; 
+SELECT LifeExpectancy from country where LifeExpectancy is NOT NULL ORDER BY LifeExpectancy DESC limit 1; 
 SELECT City.name from country join city ON Country.Capital=city.id where country.name = "spain";
 SELECT * from countrylanguage;
 SELECT DISTINCT CountryLanguage.language from countrylanguage join country on countrylanguage.countrycode=country.code where country.region="southeast asia";
-SELECT COUNT (name) from city where CountryCode = "china";
+SELECT COUNT(ID) from city c left join country co on co.code=c.CountryCodE where co.name ="China";
+SELECT population, name from country where (population is not null and population >0)order by population asc limit 1; 
+SELECT COUNT(DISTINCT CODE)FROM COUNTRY;
+SELECT NAME FROM COUNTRY ORDER BY SurfaceArea DESC LIMIT 10;
+SELECT C.NAME,C.POPULATION FROM CITY C JOIN COUNTRY CO ON CO.CODE=C.COUNTRYCODE WHERE CO.NAME = "JAPAN" ORDER BY C.POPULATION DESC LIMIT 5;
+Set HeadOfState = "elizabeth II" HeadOfState = "elizabeth II"; select name, code from country WHERE HeadOfState = "Elizabeth II"; 
